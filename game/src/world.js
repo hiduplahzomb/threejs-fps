@@ -34,7 +34,7 @@ export function createWorld(container) {
   renderer.shadowMap.enabled = true;
   renderer.shadowMap.type = THREE.PCFShadowMap;
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.15;
+  renderer.toneMappingExposure = 2.0;
   container.appendChild(renderer.domElement);
 
   const scene = new THREE.Scene();
@@ -46,9 +46,9 @@ export function createWorld(container) {
   scene.add(camera); // the camera carries the viewmodel and the flash light
 
   // Moonlight (the only shadow caster) + a cold hemisphere fill.
-  const hemi = new THREE.HemisphereLight(0x2a3b5c, 0x1a1512, 0.75);
+  const hemi = new THREE.HemisphereLight(0x2a3b5c, 0x1a1512, 1.6);
   scene.add(hemi);
-  const moon = new THREE.DirectionalLight(COLORS.moon, 0.55);
+  const moon = new THREE.DirectionalLight(COLORS.moon, 1.2);
   moon.position.set(30, 45, -25);
   moon.castShadow = true;
   moon.shadow.mapSize.set(1024, 1024);

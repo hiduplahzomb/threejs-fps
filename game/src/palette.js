@@ -8,8 +8,8 @@ import * as THREE from 'three';
 // Night on a dam: cold blue concrete, amber sodium light, rust accents.
 // Attackers (Raiders) read orange, defenders (Sentinels) read teal.
 export const COLORS = {
-  sky: 0x070b16,
-  fog: 0x0a0e18,
+  sky: 0x2b3d5c,
+  fog: 0x1e2a3d,
   ground: 0x232830,
   concrete: 0x8a8f96,
   concreteDark: 0x565b63,
@@ -59,7 +59,7 @@ function speckle(ctx, size, base, flecks, n = 900) {
 
 export function makeTextures() {
   const asphalt = canvasTexture(256, (ctx, s) => {
-    speckle(ctx, s, '#232830', ['#1b1f26', '#2b313a', '#171a20']);
+    speckle(ctx, s, '#4a5058', ['#3e434b', '#565c66', '#34383f']);
     ctx.strokeStyle = 'rgba(0,0,0,0.35)';
     ctx.lineWidth = 2;
     for (let i = 0; i < 5; i++) {
